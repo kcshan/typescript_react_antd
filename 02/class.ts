@@ -1,77 +1,63 @@
 class Animal {
-  name: string
+  name: string;
   static categoies: string[] = ['mammal', 'bird']
-  static isAnimal (a) {
+  static isAnimal(a) {
     return a instanceof Animal
   }
   constructor(name: string) {
     this.name = name
   }
-  run () {
+  run() {
     return `${this.name} is running`
   }
 }
-
 console.log(Animal.categoies)
 const snake = new Animal('lily')
 console.log(Animal.isAnimal(snake))
+console.log(snake.name)
+snake.name = 'lucy'
+console.log(snake.name)
 
 class Dog extends Animal {
-  bark () {
+  bark() {
     return `${this.name} is barking`
-  } 
+  }
 }
-
-const xiaobao = new Dog('xiaobao')
-// console.log(xiaobao.run())
-// console.log(xiaobao.bark())
+const xb = new Dog('xiaobao')
+console.log(xb.run())
+console.log(xb.bark())
 
 class Cat extends Animal {
   constructor(name) {
     super(name)
     console.log(this.name)
   }
-
-  runn () {
+  run() {
     return 'Meow, ' + super.run()
   }
 }
-
 const maomao = new Cat('maomao')
-// console.log(maomao.run())
+console.log(maomao.run());
 
 interface Radio {
-  switchRadio(): void
+  switchRadio(): void;
 }
-
 interface Battery {
-  checkBatteryStatus()
+  checkBatteryStatus();
 }
-
 interface RadioWithBattery extends Radio {
-  checkBatteryStatus()
+  checkBatteryStatus();
 }
-
-class Car implements Radio{
+class Car implements Radio {
   switchRadio() {
 
   }
 }
-
-class CellPhone implements Radio, Battery {
-  switchRadio() {
-
-  }
-  checkBatteryStatus() {
-    
-  }
-}
-
-class AppleCellPhone implements RadioWithBattery {
+class CellPhone implements RadioWithBattery {
   switchRadio() {
 
   }
   checkBatteryStatus() {
-    
+
   }
 }

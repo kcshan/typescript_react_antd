@@ -2,9 +2,9 @@ const enum Direction {
   Up = 'UP',
   Down = 'DOWN',
   Left = 'LEFT',
-  Right = 'RIGHT'
+  Right = 'RIGHT',
 }
 const value = 'UP'
 if (value === Direction.Up) {
-  console.log('go up')
+  console.log('go up!')
 }
