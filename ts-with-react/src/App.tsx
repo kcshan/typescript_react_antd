@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LikeButton from './components/LikeButton'
 import MouseTracker from './components/MouseTracker'
-import WithLoader from './components/WithLoader'
+import useURLLoader from './hooks/useURLLoader'
 import './App.css';
 
 interface IShowResoult {
@@ -9,25 +9,19 @@ interface IShowResoult {
   status: string;
 }
 
-const DogShow: React.FC<{data: IShowResoult}> = ({ data }) => {
-  return (
-    <>
-      <h2>Dog show: {data.status}</h2>
-      <img src={data.message}/>
-    </>
-  )
-}
-
 function App() {
   const [show, setShow] = useState(true)
-  const WrappedDogShow = WithLoader(DogShow, 'https://dog.ceo/api/breeds/image/random')
+  const [data, loading] = useURLLoader('https://dog.ceo/api/breeds/image/random', [show])
+  const dogResult = data as IShowResoult
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          <button onClick={() => { setShow(!show) }}>Toggle Tracker</button>
+          <button onClick={() => { setShow(!show) }}>Refresh dog photo</button>
         </p>
-        <WrappedDogShow/>
+        { loading ? <p>🐕 is loading</p> : 
+          <img src={dogResult && dogResult.message}/>
+        }
         <LikeButton/>
         { show && <MouseTracker/> }
       </header>
