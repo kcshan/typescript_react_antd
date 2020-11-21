@@ -1,18 +1,3 @@
-### 做一次设计师 - 添加自己的色彩体系
-#### 创建自己组件库的色彩体系
-- 系统色板 - 基础色板 + 中性色板
-  - [基础色板](http://www.zhongguose.com)
-  - [中性色板](https://ant.design/docs/spec/colors-cn)
-- 产品色板 - 品牌色 + 功能色板
-
-#### Bootstrap的色彩体系
-#### sass
-``` shell
-npm install node-sass --save
-```
-#### _variables.scss
-styles/_variables.scss
-``` scss
 // 中性色板
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
@@ -45,4 +30,3 @@ $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
-```
