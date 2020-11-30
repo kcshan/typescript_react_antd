@@ -1,11 +1,3 @@
-### Button 组件编码
-#### Button组件
-安装classnames
-``` shell
-yarn add classnames
-```
-src/components/Button/index.tsx
-``` javascript
 import React from 'react';
 import classNames from 'classnames';
 
@@ -71,24 +63,3 @@ Button.defaultProps = {
 }
 
 export default Button
-```
-App.tsx
-``` javascript
-import React from 'react';
-import Button, { ButtonType, ButtonSize } from './components/Button';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Button disabled>Hello World</Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>Hello World</Button>
-        <Button btnType={ButtonType.Link} href="https://www.baidu.com" disabled>百度 Link</Button>
-      </header>
-    </div>
-  );
-}
-
-export default App;
-
-```
