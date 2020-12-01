@@ -1,7 +1,3 @@
-### 添加Button基本样式
-### _style.scss
-src/components/Button/_style.scss
-``` scss
 .btn {
   position: relative;
   display: inline-block;
@@ -28,16 +24,3 @@ src/components/Button/_style.scss
     }
   }
 }
-```
-src/styles/index.scss
-``` scss
-// config
-@import "variables";
-
-// layout
-@import "reboot";
-
-// button
-@import "../components/Button/style";
-
-```
