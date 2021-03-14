@@ -1,6 +1,3 @@
-### 基础架构
-components/Menu/menu.tsx
-``` javascript
 import React from 'react';
 import classNames from 'classnames';
 
@@ -31,8 +28,3 @@ Menu.defaultProps = {
 }
 
 export default Menu;
-```
-components/Menu/menuItem.tsx
-``` javascript
-
-```
